@@ -6,7 +6,6 @@ public class Main {
 	public static void main(String[] args) {
 		new Main().run();
 	}
-
 	public void run() {
 		Scanner fin = new Scanner(System.in);
 		int N = fin.nextInt();

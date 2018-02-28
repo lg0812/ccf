@@ -1,42 +1,42 @@
 package coins;
 
 /**
- * Ó²±ÒÕÒÁãÎÊÌâ¡£
+ * ç¡¬å¸æ‰¾é›¶é—®é¢˜ã€‚
  * 
- * Ó²±ÒÕÒÁãÎÊÌâÃèÊö£ºÏÖ´æÔÚÒ»¶ÑÃæÖµÎª V1¡¢V2¡¢V3 ¡­ ¸öµ¥Î»µÄÓ²±Ò£¬ÎÊ×îÉÙĞèÒª¶àÉÙ¸öÓ²±Ò²ÅÄÜÕÒ³ö×ÜÖµÎª T ¸öµ¥Î»µÄÁãÇ®£¿</br>
- * ¼ÙÉèÕâÒ»¶ÑÃæÖµ·Ö±ğÎª 1¡¢2¡¢5¡¢21¡¢25 Ôª£¬ĞèÒªÕÒ³ö×ÜÖµ T Îª 63 ÔªµÄÁãÇ®¡£
+ * ç¡¬å¸æ‰¾é›¶é—®é¢˜æè¿°ï¼šç°å­˜åœ¨ä¸€å †é¢å€¼ä¸º V1ã€V2ã€V3 â€¦ ä¸ªå•ä½çš„ç¡¬å¸ï¼Œé—®æœ€å°‘éœ€è¦å¤šå°‘ä¸ªç¡¬å¸æ‰èƒ½æ‰¾å‡ºæ€»å€¼ä¸º T ä¸ªå•ä½çš„é›¶é’±ï¼Ÿ</br>
+ * å‡è®¾è¿™ä¸€å †é¢å€¼åˆ†åˆ«ä¸º 1ã€2ã€5ã€21ã€25 å…ƒï¼Œéœ€è¦æ‰¾å‡ºæ€»å€¼ T ä¸º 63 å…ƒçš„é›¶é’±ã€‚
  *
  */
 public class Main {
 
-	public static void main(String[] args) {
-		// Ô¤ÏÈ½µĞòÅÅĞò
-		int[] coinsType = new int[] { 25, 21, 10, 5, 1 };
-		// ĞèÒªÕÒÁãµÄÃæÖµ
-		int money = 63;
+    public static void main(String[] args) {
+        // é¢„å…ˆé™åºæ’åº
+        int[] coinsType = new int[] { 25, 21, 10, 5, 1 };
+        // éœ€è¦æ‰¾é›¶çš„é¢å€¼
+        int money = 63;
 
-		int[] coins = new int[money + 1];
-		run(coinsType, coinsType.length, money, coins);
-	}
+        int[] coins = new int[money + 1];
+        run(coinsType, coinsType.length, money, coins);
+    }
 
-	private static void run(int[] coinsType, int length, int money, int[] coins) {
-		// TODO Auto-generated method stub
+    private static void run(int[] coinsType, int length, int money, int[] coins) {
+        // TODO Auto-generated method stub
 
-		// ´ÓÃæÖµÎª1µ½ÃæÖµÎª63µÄËùÓĞÃæÖµĞèÒªµÄÓ²±ÒµÄ×ÜÊı
-		for (int cents = 1; cents <= money; cents++) {
-			int min = cents;
-			for (int i = 0; i < length; i++) {
-				if (coinsType[i] <= cents) {
-					int temp = coins[cents - coinsType[i]] + 1;
-					if (temp < min) {
-						min = temp;
-					}
-				}
-			}
+        // ä»é¢å€¼ä¸º1åˆ°é¢å€¼ä¸º63çš„æ‰€æœ‰é¢å€¼éœ€è¦çš„ç¡¬å¸çš„æ€»æ•°
+        for (int cents = 1; cents <= money; cents++) {
+            int min = cents;
+            for (int i = 0; i < length; i++) {
+                if (coinsType[i] <= cents) {
+                    int temp = coins[cents - coinsType[i]] + 1;
+                    if (temp < min) {
+                        min = temp;
+                    }
+                }
+            }
 
-			coins[cents] = min;
-			System.out.println("ÃæÖµÎª£º" + cents + ",ÖÁÉÙĞèÒªÊıÁ¿£º" + min);
-		}
-	}
+            coins[cents] = min;
+            System.out.println("é¢å€¼ä¸ºï¼š" + cents + ",è‡³å°‘éœ€è¦æ•°é‡ï¼š" + min);
+        }
+    }
 
 }

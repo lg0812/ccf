@@ -1,29 +1,29 @@
 package lcs;
 
 public class Main {
-	public static void main(String[] args) {
-		String str1 = "advantage";
-		String str2 = "didactical";
-		System.out.println(lcs1(str1, str1.length(), str2, str2.length()));
-	}
+    public static void main(String[] args) {
+        String str1 = "advantage";
+        String str2 = "didactical";
+        System.out.println(lcs1(str1, str1.length(), str2, str2.length()));
+    }
 
-	public static int lcs1(String str1, int m, String str2, int n) {
-		if (m == 0 || n == 0)
-			return 0;
-		// ¹¹½¨Ò»¸öm + 1ĞĞ n + 1ÁĞµÄ¸¨Öú¶şÎ¬Êı×é,ÀïÃæµÄÔªËØ³õÊ¼Öµ¶¼Îª0
-		int[][] arr = new int[m + 1][n + 1];
-		// ÒÀ´ÎÇó¶şÎ¬Êı×éÖĞµÄÖµ
-		for (int i = 1; i <= m; i++) {
-			for (int j = 1; j <= n; j++) {
-				// µ±×îºóÒ»¸ö×Ö·ûÏàµÈÊ±µÈÓÚ×óÉÏ½ÇµÄÔªËØ¼Ó1
-				if (str1.charAt(i - 1) == str2.charAt(j - 1))
-					arr[i][j] = arr[i - 1][j - 1] + 1;
-				// ²»ÏàµÈÊ±È¡½ôÁÚ×ó±ßÔªËØºÍÉÏ±ßÔªËØÕßµÄ´óÕß
-				else
-					arr[i][j] = arr[i - 1][j] > arr[i][j - 1] ? arr[i - 1][j] : arr[i][j - 1];
-			}
-		}
-		return arr[m][n];// ¶şÎ¬Êı×éÓÒÏÂ½ÇµÄÔªËØ¼´ÎÒÃÇĞèÒªµÄÖµ
-	}
+    public static int lcs1(String str1, int m, String str2, int n) {
+        if (m == 0 || n == 0)
+            return 0;
+        // æ„å»ºä¸€ä¸ªm + 1è¡Œ n + 1åˆ—çš„è¾…åŠ©äºŒç»´æ•°ç»„,é‡Œé¢çš„å…ƒç´ åˆå§‹å€¼éƒ½ä¸º0
+        int[][] arr = new int[m + 1][n + 1];
+        // ä¾æ¬¡æ±‚äºŒç»´æ•°ç»„ä¸­çš„å€¼
+        for (int i = 1; i <= m; i++) {
+            for (int j = 1; j <= n; j++) {
+                // å½“æœ€åä¸€ä¸ªå­—ç¬¦ç›¸ç­‰æ—¶ç­‰äºå·¦ä¸Šè§’çš„å…ƒç´ åŠ 1
+                if (str1.charAt(i - 1) == str2.charAt(j - 1))
+                    arr[i][j] = arr[i - 1][j - 1] + 1;
+                // ä¸ç›¸ç­‰æ—¶å–ç´§é‚»å·¦è¾¹å…ƒç´ å’Œä¸Šè¾¹å…ƒç´ è€…çš„å¤§è€…
+                else
+                    arr[i][j] = arr[i - 1][j] > arr[i][j - 1] ? arr[i - 1][j] : arr[i][j - 1];
+            }
+        }
+        return arr[m][n];// äºŒç»´æ•°ç»„å³ä¸‹è§’çš„å…ƒç´ å³æˆ‘ä»¬éœ€è¦çš„å€¼
+    }
 
 }

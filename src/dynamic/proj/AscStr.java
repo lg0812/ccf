@@ -1,5 +1,9 @@
 package dynamic.proj;
 
+/**
+ * @author LG0812 </br>
+ * 		最长子字符串问题
+ */
 public class AscStr {
 	public static void main(String[] args) {
 		String str1 = "advantage";

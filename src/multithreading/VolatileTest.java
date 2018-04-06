@@ -8,6 +8,14 @@ package multithreading;
  *         "color:e85347;">一定的有序性</strong></span><br>
  * 
  *         这里的inc++ 不是原子操作：包括读取x的值，进行加1操作，写入新的值。
+ * 
+ *         使用场景：<br>
+ *         1）对变量的写操作不依赖于当前值 <br>
+ *         反例： inc++<br>
+ *         正确方式： flag = true而不是 flag =!flag<br>
+ *         2）该变量没有包含在具有其他变量的不变式中<br>
+ *         <br>
+ *         <br>
  */
 public class VolatileTest {
 	volatile int inc = 0;

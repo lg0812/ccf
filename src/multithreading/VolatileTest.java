@@ -32,10 +32,16 @@ public class VolatileTest {
 
 		for (int i = 0; i < 10; i++) {
 			new Thread(new Runnable() {
+				@Override
+				public String toString() {
+					// TODO Auto-generated method stub
+					return Thread.currentThread() + "";
+				}
 
 				@Override
 				public void run() {
 					// TODO Auto-generated method stub
+					System.out.println(this);
 					for (int j = 0; j < 100; j++) {
 						increment();
 					}

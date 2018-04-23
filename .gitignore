@@ -2,3 +2,4 @@ bin/*
 ccf.iml
 .idea
 .settings
+/bin/

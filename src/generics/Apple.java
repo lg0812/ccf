@@ -3,6 +3,9 @@ package generics;
 public class Apple extends Fruit {
 	public String type;
 
+	public Apple() {
+	}
+
 	public Apple(String fruitName) {
 		// TODO Auto-generated constructor stub
 		super(fruitName);
